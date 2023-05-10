@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #5f826b; font-style: italic;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+.s6 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">tkinter </span><span class="s0">as </span><span class="s1">tk</span>
+
+<span class="s0">def </span><span class="s1">fahrenheit_to_celsius</span><span class="s2">():</span>
+    <span class="s3">&quot;&quot;&quot;Converts the temperature in Fahrenheit to Celsius&quot;&quot;&quot;</span>
+    <span class="s1">fahrenheit </span><span class="s2">= </span><span class="s1">ent_temperature</span><span class="s2">.</span><span class="s1">get</span><span class="s2">()</span>
+    <span class="s1">celsius </span><span class="s2">= </span><span class="s1">round</span><span class="s2">((</span><span class="s1">float</span><span class="s2">(</span><span class="s1">fahrenheit</span><span class="s2">) - </span><span class="s4">32</span><span class="s2">) * </span><span class="s4">5</span><span class="s2">/</span><span class="s4">9</span><span class="s2">,</span><span class="s4">2</span><span class="s2">)</span>
+    <span class="s1">lbl_result</span><span class="s2">.</span><span class="s1">config</span><span class="s2">(</span><span class="s1">text</span><span class="s2">=</span><span class="s5">f&quot;</span><span class="s0">{</span><span class="s1">celsius</span><span class="s0">:</span><span class="s5">.2f</span><span class="s0">} \N{DEGREE CELSIUS}</span><span class="s5">&quot;</span><span class="s2">)</span>
+
+<span class="s6"># Créer la fenêtre principale</span>
+<span class="s1">window </span><span class="s2">= </span><span class="s1">tk</span><span class="s2">.</span><span class="s1">Tk</span><span class="s2">()</span>
+<span class="s1">window</span><span class="s2">.</span><span class="s1">title</span><span class="s2">(</span><span class="s5">&quot;Convertisseur de température&quot;</span><span class="s2">)</span>
+<span class="s1">window</span><span class="s2">.</span><span class="s1">resizable</span><span class="s2">(</span><span class="s1">width</span><span class="s2">=</span><span class="s0">False</span><span class="s2">, </span><span class="s1">height</span><span class="s2">=</span><span class="s0">False</span><span class="s2">)</span>
+
+<span class="s6"># Créer un cadre pour les widgets d'entrée</span>
+<span class="s1">frm_entry </span><span class="s2">= </span><span class="s1">tk</span><span class="s2">.</span><span class="s1">Frame</span><span class="s2">(</span><span class="s1">master</span><span class="s2">=</span><span class="s1">window</span><span class="s2">)</span>
+<span class="s1">ent_temperature </span><span class="s2">= </span><span class="s1">tk</span><span class="s2">.</span><span class="s1">Entry</span><span class="s2">(</span><span class="s1">master</span><span class="s2">=</span><span class="s1">frm_entry</span><span class="s2">, </span><span class="s1">width</span><span class="s2">=</span><span class="s4">10</span><span class="s2">)</span>
+<span class="s1">lbl_temp </span><span class="s2">= </span><span class="s1">tk</span><span class="s2">.</span><span class="s1">Label</span><span class="s2">(</span><span class="s1">master</span><span class="s2">=</span><span class="s1">frm_entry</span><span class="s2">, </span><span class="s1">text</span><span class="s2">=</span><span class="s5">&quot;</span><span class="s0">\N{DEGREE FAHRENHEIT}</span><span class="s5">&quot;</span><span class="s2">)</span>
+
+<span class="s6"># Utilisez le gestionnaire de géométrie de grille pour organiser les widgets</span>
+<span class="s1">ent_temperature</span><span class="s2">.</span><span class="s1">grid</span><span class="s2">(</span><span class="s1">row</span><span class="s2">=</span><span class="s4">0</span><span class="s2">, </span><span class="s1">column</span><span class="s2">=</span><span class="s4">0</span><span class="s2">, </span><span class="s1">sticky</span><span class="s2">=</span><span class="s5">&quot;e&quot;</span><span class="s2">)</span>
+<span class="s1">lbl_temp</span><span class="s2">.</span><span class="s1">grid</span><span class="s2">(</span><span class="s1">row</span><span class="s2">=</span><span class="s4">0</span><span class="s2">, </span><span class="s1">column</span><span class="s2">=</span><span class="s4">1</span><span class="s2">, </span><span class="s1">sticky</span><span class="s2">=</span><span class="s5">&quot;w&quot;</span><span class="s2">)</span>
+<span class="s1">frm_entry</span><span class="s2">.</span><span class="s1">grid</span><span class="s2">(</span><span class="s1">row</span><span class="s2">=</span><span class="s4">0</span><span class="s2">, </span><span class="s1">column</span><span class="s2">=</span><span class="s4">0</span><span class="s2">, </span><span class="s1">padx</span><span class="s2">=</span><span class="s4">10</span><span class="s2">)</span>
+
+<span class="s6"># Créer un widget bouton pour lancer la conversion</span>
+<span class="s1">btn_convert </span><span class="s2">= </span><span class="s1">tk</span><span class="s2">.</span><span class="s1">Button</span><span class="s2">(</span>
+    <span class="s1">master</span><span class="s2">=</span><span class="s1">window</span><span class="s2">,</span>
+    <span class="s1">text</span><span class="s2">=</span><span class="s5">&quot;</span><span class="s0">\N{RIGHTWARDS BLACK ARROW}</span><span class="s5">&quot;</span><span class="s2">,</span>
+    <span class="s1">command</span><span class="s2">=</span><span class="s1">fahrenheit_to_celsius</span>
+<span class="s2">)</span>
+<span class="s6"># Créer une étiquette pour afficher le résultat de la conversion</span>
+<span class="s1">lbl_result </span><span class="s2">= </span><span class="s1">tk</span><span class="s2">.</span><span class="s1">Label</span><span class="s2">(</span><span class="s1">master</span><span class="s2">=</span><span class="s1">window</span><span class="s2">, </span><span class="s1">text</span><span class="s2">=</span><span class="s5">&quot;</span><span class="s0">\N{DEGREE CELSIUS}</span><span class="s5">&quot;</span><span class="s2">)</span>
+
+<span class="s6"># Utilisez le gestionnaire de géométrie de grille pour organiser les widgets</span>
+<span class="s1">btn_convert</span><span class="s2">.</span><span class="s1">grid</span><span class="s2">(</span><span class="s1">row</span><span class="s2">=</span><span class="s4">0</span><span class="s2">, </span><span class="s1">column</span><span class="s2">=</span><span class="s4">1</span><span class="s2">, </span><span class="s1">pady</span><span class="s2">=</span><span class="s4">10</span><span class="s2">)</span>
+<span class="s1">lbl_result</span><span class="s2">.</span><span class="s1">grid</span><span class="s2">(</span><span class="s1">row</span><span class="s2">=</span><span class="s4">0</span><span class="s2">, </span><span class="s1">column</span><span class="s2">=</span><span class="s4">2</span><span class="s2">, </span><span class="s1">padx</span><span class="s2">=</span><span class="s4">10</span><span class="s2">)</span>
+
+<span class="s6"># Lancer l'application</span>
+<span class="s1">window</span><span class="s2">.</span><span class="s1">mainloop</span><span class="s2">()</span>
+
+</pre>
+</body>
+</html>
